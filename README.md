@@ -48,42 +48,48 @@ Arrays.sort(underlineSpans, new Comparator<UnderlineSpan>() {
 });
 ~~~
 
-And I moved all spans out of the interval, by checking start and end point of each span, and comparing it with start and end point of selection.
+**And I moved all spans out of the interval**,
 
-I also checked start and end point of span instances, whether these spans are continuous in interval.
+by checking start and end point of each span, 
 
-(That's why I sorted them : to check ...)
+and comparing it with start and end point of selection.
 
-If all letters in interval have same span, 
+**I also checked start and end point of span instances, whether these spans are continuous in interval or not.**
+
+(That's why I sorted them : **[Sweep line algorithm](https://en.wikipedia.org/wiki/Sweep_line_algorithm)**)
+
+Only if all letters in interval don't have same span, we add new span in the interval.
 
 ~~~java
 int s1=2100000000, e1=ss;
 if(a==UNDERLINE){
 	for(int i=0; i<underlineSpans.length; i++){
-		int s, e;
-		s = spannable.getSpanStart(underlineSpans[i]);
-		e = spannable.getSpanEnd(underlineSpans[i]);
+		int s = spannable.getSpanStart(underlineSpans[i]);
+		int e = spannable.getSpanEnd(underlineSpans[i]);
 		if(s<=s1){
 			s1 = s;
+			// set the start point, to compare with the selection interval.
 		}
 		if(s<=e1&&e1<=e){
 			e1 = e;
+			// set the end point of continuous span, to compare with the selection interval.
 		}
 		spannable.removeSpan(underlineSpans[i]);
 		if(s<ss){
 			spannable.setSpan(new UnderlineSpan(), s, ss, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// add new span, with removal works like cutting the span.
+			// only if the span goes under and over start point.
 		}
 		if(se<e){
 			spannable.setSpan(new UnderlineSpan(), se, e, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+			// same with up : only if the span goes under and over end point.
 		}
 	}
 	if (s1 > ss || se > e1) {
 		spannable.setSpan(new UnderlineSpan(), ss, se, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+		// add span on this interval, if original spans don't make full of it.
 	}
 }
 ~~~
-	
 
-
-
-Rich Text Editor is hard to make, especially in java lang.
+That's how this program works.
