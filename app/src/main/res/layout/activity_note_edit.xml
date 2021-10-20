@@ -59,7 +59,6 @@
 					android:background="@android:color/transparent"
 					android:ems="10"
 					android:inputType="textMultiLine"
-					android:text="test"
 					android:textColor="@android:color/primary_text_light"
 					android:textSize="20sp" />
 
