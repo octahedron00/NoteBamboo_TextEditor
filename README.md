@@ -6,7 +6,23 @@ You can use : Bold, Italic, underline, strikethrough, and color of letter(foregr
 
 Code works with **[Spans](https://developer.android.com/guide/topics/text/spans) in android,**
 
-So you can add any spans you want : background color, relative size, etc.
+So you can add anything works with span you want : background color, relative size, etc.
+
+---
+
+## How to use
+
+You know, by using Android Studio, you can add a new activity.
+
+**This codes are about app with only one activity, the text editor.**
+
+You can add this activity by simply copying codes, and changing them a little bit.
+
+Also you can add anything works with span you want.
+
+**Code here : [NoteEditActivity.java](NoteEditActivity.java), [activity_note_edit.xml](activity_note_edit.xml)**
+
+***No copyrights here***, just please let me know you will use this code.
 
 ---
 
@@ -24,7 +40,7 @@ spannable.getSpans(ss, se, Span.class) : Span[]
 
 this function can get any spans, but there are some spans that we need to use.
 
-I avoided to get spans that I don't care of. I specified spans to get.
+I avoided to get spans that I don't care of or that can make something wrong. I specified spans to get.
 
 For example, to get UnderlineSpan, I used following code.
 
@@ -82,7 +98,7 @@ if(a==UNDERLINE){
 		}
 		if(se<e){
 			spannable.setSpan(new UnderlineSpan(), se, e, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-			// same with up : only if the span goes under and over end point.
+			// same with upper one : only if the span goes under and over end point.
 		}
 	}
 	if (s1 > ss || se > e1) {
@@ -92,4 +108,4 @@ if(a==UNDERLINE){
 }
 ~~~
 
-That's how this program works.
+That's all, that's how this program works with span.
