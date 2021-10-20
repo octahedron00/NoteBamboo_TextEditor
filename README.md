@@ -1,12 +1,14 @@
 # NoteBamboo_TextEditor
 
-### Rich Text Editor for android, specialized to write memo, only with Java.
+### WYSIWYG Rich Text Editor for android, specialized to write memo, only with Java.
 
 You can use : Bold, Italic, underline, strikethrough, and color of letter(foregroundcolor).
 
 Code works with **[Spans](https://developer.android.com/guide/topics/text/spans) in android,**
 
 So you can add anything works with span you want : background color, relative size, etc.
+
+[Memo here](memo.md)
 
 ---
 
