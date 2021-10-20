@@ -13,7 +13,6 @@
 		android:layout_height="0dp"
 		android:clickable="true"
 		android:contextClickable="true"
-		android:onClick="clickOnBack"
 		android:orientation="vertical"
 		app:layout_constraintBottom_toTopOf="@+id/colorSelect"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -25,8 +24,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:clickable="false"
-			android:contextClickable="false"
-			android:onClick="clickOnBack">
+			android:contextClickable="false">
 
 			<LinearLayout
 				android:layout_width="match_parent"
@@ -34,7 +32,6 @@
 				android:clickable="true"
 				android:contextClickable="true"
 				android:longClickable="false"
-				android:onClick="clickOnBack"
 				android:orientation="vertical">
 
 				<androidx.constraintlayout.widget.ConstraintLayout
