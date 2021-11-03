@@ -2,6 +2,8 @@
 
 ### WYSIWYG Rich Text Editor for android, specialized to write memo, only with Java.
 
+### This source was used in [Note Bamboo](https://play.google.com/store/apps/details?id=com.octahedron00.notebamboo) in Play Store
+
 You can use : Bold, Italic, underline, strikethrough, and color of letter(foregroundcolor).
 
 Code works with **[Spans](https://developer.android.com/guide/topics/text/spans) in android,**
